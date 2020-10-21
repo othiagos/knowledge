@@ -2,8 +2,11 @@ const express = require('express')
 const consign = require('consign')
 const db = require('./config/db')
 const app = express()
+const mongoose = require('mongoose')
+require('./config/mongodb')
 
 app.db = db
+app.mongoose = mongoose
 
 consign()
     .include('./config/passport.js')
@@ -14,5 +17,5 @@ consign()
     .into(app)
 
 app.listen(3000, () => {
-    console.log('Backend executando..')
+    console.log('Backend executando...')
 })
