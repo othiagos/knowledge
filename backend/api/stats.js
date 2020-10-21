@@ -1,5 +1,5 @@
 module.exports = app => {
-    const Stat = app.mongoose.model('Stat', {
+    const Stats = app.mongoose.model('Stats', {
         users: Number,
         categories: Number,
         articles: Number,
@@ -7,16 +7,16 @@ module.exports = app => {
     })
 
     const get = (req, res) => {
-        Stat.findOne({}, {}, { sort: { 'createdAt' : -1 } })
-            .then(stat => {
-                const defaultStat = {
+        Stats.findOne({}, {}, { sort: { 'createdAt' : -1 } })
+            .then(stats => {
+                const defaultStats = {
                     users: 0,
                     categories: 0,
                     articles: 0
                 }
-                res.json(stat || defaultStat)
+                res.json(stats || defaultStats)
             })
     }
 
-    return { Stat, get }
+    return { Stats, get }
 }
