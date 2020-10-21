@@ -1,10 +1,13 @@
 <template>
-  <aside class="menu"></aside>
+  <aside class="menu" v-show="isMenuVisible"></aside>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default { 
-  name: 'Menu'
+  name: 'Menu',
+  computed: mapState(['isMenuVisible'])
 }
 </script>
 
@@ -13,5 +16,4 @@ export default {
     grid-area: menu;
     background:  linear-gradient(to right, #232526, #414345);
   }
-
 </style>

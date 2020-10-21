@@ -18,12 +18,12 @@ export default {
   },
   computed: {
     icon() {
-      return "fa-angle-left"
+      return this.$store.state.isMenuVisible ? "fa-angle-left" : 'fa-angle-down'
     }
   },
   methods: {
     toggleMenu() {
-      alert('click')
+      this.$store.commit('toggleMenu')
     }
   }
 }
