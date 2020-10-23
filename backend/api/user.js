@@ -11,7 +11,6 @@ module.exports = app => {
 
     const save = async (req, res) => {
         const user = { ...req.body }
-        console.log(user)
         if(req.params.id) user.id = req.params.id
 
         if(!req.originalUrl.startsWith('/users')) user.admin = false
