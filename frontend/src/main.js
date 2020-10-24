@@ -9,10 +9,6 @@ import router from './config/router'
 
 Vue.config.productionTip = false
 
-const authToken = ''
-
-require('axios').defaults.headers.common['Authorization'] = authToken
-
 new Vue({
   store,
   router,
